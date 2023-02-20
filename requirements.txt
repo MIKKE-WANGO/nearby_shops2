@@ -3,6 +3,7 @@ dj-database-url
 Django==4.0
 geos
 numpy 
+proj
 psycopg2==2.9.3
 psycopg2-binary
 pytz
@@ -46,4 +47,5 @@ tornado
 vine
 wcwidth
 wincertstore
+wheel
 whitenoise
