@@ -3,7 +3,7 @@
 set -o errexit
 
 pip install -r requirements.txt
-conda install -c conda-forge gdal
+
 
 python manage.py collectstatic --no-input
 python manage.py migrate
