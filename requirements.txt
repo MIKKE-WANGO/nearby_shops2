@@ -3,7 +3,7 @@ dj-database-url
 Django==4.0
 GDAL==3.6.2
 numpy 
-psycopg2
+psycopg2==2.9.3
 psycopg2-binary
 pytz
 sqlparse 
