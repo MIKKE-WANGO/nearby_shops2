@@ -3,7 +3,6 @@ dj-database-url
 Django==4.0
 geos
 numpy 
-proj
 psycopg2==2.9.3
 psycopg2-binary
 pytz
@@ -21,14 +20,12 @@ click-didyoumean
 click-plugins
 click-repl
 colorama
-conda
 cryptography 
 
 django-celery-beat
 django-celery-results
 django-timezone-field
 flower
-
 greenlet 
 gunicorn
 humanize
@@ -49,5 +46,5 @@ tornado
 vine
 wcwidth
 wincertstore
-wheel
 whitenoise
+wheel
