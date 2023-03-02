@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  nearby_shops2:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    image: nearby_shops2
+    container_name: nearby_shops2_container
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  
+  db:
+    image: postgis/postgis
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mananasi25
+    container_name: nearby_shops2_db
+
+  redis:
+    image: redis
+    container_name: nearby_shops2_redis
+      
+  celery:
+    restart: always
+    build:
+      context: .
+    command:  celery -A nearby_shops2 worker --loglevel=INFO
+    volumes:
+      - .:/app
+    container_name: nearby_shops2_celery
+    depends_on:
+      - db
+      - redis
+      - nearby_shops2
