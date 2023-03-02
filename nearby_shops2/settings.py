@@ -91,24 +91,24 @@ WSGI_APPLICATION = 'nearby_shops2.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-#DATABASES = {
-  #  'default': dj_database_url.config(
-  #      #Feel free to alter this value to suit your needs.
- #       default='postgresql://postgres:postgres@localhost:5432/seraphiclive',
- #       conn_max_age=600
- #   )
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'mananasi25',
-        'HOST': 'db',
-        'PORT': '5432'
-    }
+    'default': dj_database_url.config(
+        #Feel free to alter this value to suit your needs.
+        default='postgresql://postgres:postgres@localhost:5432/seraphiclive',
+        conn_max_age=600
+    )
 }
+
+#DATABASES = {
+#'default': {
+#    'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#    'NAME': 'postgres',
+#    'USER': 'postgres',
+#    'PASSWORD': 'mananasi25',
+#    'HOST': 'db',
+#    'PORT': '5432'
+#}
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
