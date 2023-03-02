@@ -39,7 +39,7 @@ SECRET_KEY = '=q5%dn29%u7a1w!km3q3&zm6#lah^lvpg$$^$*4+a0*@jfkrbe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://nearby-shops2-docker.onrender.com']
 
 
 # Application definition
