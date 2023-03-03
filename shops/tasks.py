@@ -9,3 +9,17 @@ def test_func(self):
 
     return 'Done'
 
+
+@shared_task(bind=True, name='send-mail')
+def send_mail_func(self):
+    send_mail_func.delay()
+    message = EmailMessage(
+        'New quotation',
+        'Client details are in the pdf.\nOpen the csv file with excel to easily make changes.',
+        'mikemundati@gmail.com',
+        ['mikemundati@gmail.com'],
+    )
+    
+    message.send(fail_silently=False)
+
+    return 'Done'

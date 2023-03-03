@@ -23,5 +23,5 @@ class Home(generic.ListView):
     template_name = 'shops/index.html'
 
 def test(request):
-    test_func.delay()
-    return HttpResponse('Done')
+    send_mail_func.delay()
+    return HttpResponse('Sent')
