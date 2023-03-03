@@ -12,7 +12,7 @@ def test_func(self):
 
 @shared_task(bind=True, name='send-mail')
 def send_mail_func(self):
-    send_mail_func.delay()
+    
     message = EmailMessage(
         'New quotation',
         'Client details are in the pdf.\nOpen the csv file with excel to easily make changes.',
