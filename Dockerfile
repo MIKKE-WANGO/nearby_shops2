@@ -160,4 +160,5 @@ COPY . .
 
 RUN SECRET_KEY=nothing python manage.py collectstatic --no-input;
 RUN SECRET_KEY=nothing python manage.py migrate
-CMD [ "gunicorn", "nearby_shops2.wsgi:application"]
+#CMD [ "gunicorn", "nearby_shops2.wsgi:application"]
+CMD ["celery", "-A", "nearby_shops2", "worker", "--loglevel=INFO" ]

@@ -24,23 +24,23 @@ services:
           name: nearbyshops_redis
           property: connectionString
 
-  - type: web
-    name: nearby_shops2_celery
-    env: docker
-    dockerfilePath: ./Dockerfile
-    region: frankfurt
-    plan: free 
-    branch: master 
-    dockerCommand: celery -A nearby_shops2 worker --loglevel=INFO
-    healthCheckPath: /
-    envVars:
-      - key: DEBUG
-        value: True
-      - key: DATABASE_URL
-        fromDatabase:
-          name: nearbyshops_db
-          property: connectionString
-      - key: REDIS_URL
-        fromRedis:
-          name: nearbyshops_redis
-          property: connectionString
+#  - type: web
+ #   name: nearby_shops2_celery
+  #  env: docker
+   # dockerfilePath: ./Dockerfile
+   # region: frankfurt
+   # plan: free 
+    #branch: master 
+#    dockerCommand: celery -A nearby_shops2 worker --loglevel=INFO
+ #   healthCheckPath: /
+  #  envVars:
+   #   - key: DEBUG
+    #    value: True
+     # - key: DATABASE_URL
+      #  fromDatabase:
+       #   name: nearbyshops_db
+        #  property: connectionString
+  #    - key: REDIS_URL
+   #     fromRedis:
+    #      name: nearbyshops_redis
+     #     property: connectionString
