@@ -39,8 +39,12 @@ SECRET_KEY = '=q5%dn29%u7a1w!km3q3&zm6#lah^lvpg$$^$*4+a0*@jfkrbe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://nearby-shops2-docker.onrender.com']
 
+ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -156,10 +160,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 #CELERY SETTINGS
-CELERY_BROKER_URL = 'redis://redis:6379'
+CELERY_BROKER_URL = os.environ.get('REDIS_URL')
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Africa/Nairobi'
-CELERY_RESULT_BACKEND = 'redis://redis:6379'
+CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL')
 CELERY_RESULT_EXTENDED = True
