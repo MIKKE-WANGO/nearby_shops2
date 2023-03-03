@@ -158,5 +158,6 @@ COPY . .
 
 #ENTRYPOINT [ "python3", "manage.py", "migrate" ]
 
-
-#CMD [ "python3", "manage.py", "runserver"]
+RUN SECRET_KEY=nothing python manage.py collectstatic --no-input;
+RUN SECRET_KEY=nothing python manage.py migrate
+CMD [ "gunicorn" "project.wsgi"]
