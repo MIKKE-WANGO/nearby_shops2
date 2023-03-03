@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'nearby_shops2.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         #Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/seraphiclive',
+        default='postgres://nearbyshops_db_user:PJmPMLRHYJA4Ru4gfAYx8qIT6EQA2eOU@dpg-cfpsj6o2i3mo4bt3jpug-a.frankfurt-postgres.render.com/nearbyshops_db',
         conn_max_age=600
     )
 }
