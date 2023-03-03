@@ -4,7 +4,7 @@ dj-database-url==1.2.0
 Django
 
 numpy 
-
+gunicorn
 psycopg2-binary==2.9.5
 pytz==2021.3
 redis
