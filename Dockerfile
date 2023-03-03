@@ -159,4 +159,4 @@ COPY . .
 #ENTRYPOINT [ "python3", "manage.py", "migrate" ]
 
 
-CMD [ "python3", "manage.py", "runserver"]
+#CMD [ "python3", "manage.py", "runserver"]
