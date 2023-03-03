@@ -21,7 +21,7 @@ services:
         value: 4
       - key: REDIS_URL
         fromRedis:
-          name: celery-test-redis
+          name: nearbyshops_redis
           property: connectionString
 
   - type: web
