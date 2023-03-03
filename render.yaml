@@ -31,7 +31,7 @@ services:
     region: frankfurt
     plan: free 
     branch: master 
-    dockerCommand: celery --app nearby_shops2 worker --loglevel info --concurrency 4
+    dockerCommand: celery -A nearby_shops2 worker --loglevel=INFO
     healthCheckPath: /
     envVars:
       - key: DEBUG
