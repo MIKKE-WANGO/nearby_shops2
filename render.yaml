@@ -6,7 +6,7 @@ services:
     region: frankfurt
     plan: free 
     branch: master 
-    dockerCommand: gunicorn project.wsgi
+    dockerCommand: gunicorn nearby_shops2.wsgi:application
     healthCheckPath: /
     envVars:
       - key: DEBUG
@@ -19,6 +19,10 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
+      - key: REDIS_URL
+        fromRedis:
+          name: celery-test-redis
+          property: connectionString
 
  # - type: web
   #  name: nearby_shops2_celery
